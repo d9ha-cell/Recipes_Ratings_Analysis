@@ -198,26 +198,26 @@ The new Final Model had a **Root Mean Squared Error**: 0.3572747903917559
 
 In order to do the Fairness Analysis I thought that it would be fitting to once again choose two groups of recipes that had to do with the overarching question. The Groups therefore were split into two groups of lower and Higher calorie counts. 
 
-Group X Chosen: High Calorie Count Recipes (Recipes with Total Calories >= median of 301.1)
+**Group X Chosen**: High Calorie Count Recipes (Recipes with Total Calories >= median of 301.1)
 
-Group Y Chosen: Low Calorie Count Recipes (Recipes with Total Calories < median of 301.1)
+**Group Y Chosen**: Low Calorie Count Recipes (Recipes with Total Calories < median of 301.1)
 
-Evaluation Meric Utilized: Once Again will be RMSE, This would once again fit nicely because it measures prediction error in a simple way
+**Evaluation Metric Utilized**: Once Again will be RMSE, This would once again fit nicely because it measures prediction error in a simple way
 
-Null Hypothesis: The Model used is fair for recipes in both Group X and Y. The RMSE found for higher calorie count recipes are about the same as lower calorie count recipes. Random Chance causes any noticable difference in RMSE.
+**Null Hypothesis**: The Model used is fair for recipes in both Group X and Y. The RMSE found for higher calorie count recipes are about the same as lower calorie count recipes. Random Chance causes any noticable difference in RMSE.
 
-Alternate Hypothesis: The Model used is not fair. The RMSE differs between recipes from Group X and Group Y. Difference in RMSE are not by random chance
+**Alternate Hypothesis**: The Model used is not fair. The RMSE differs between recipes from Group X and Group Y. Difference in RMSE are not by random chance
 
-Test Statistic: The difference between the RMSE of Group X and Group Y (High and Low Calorie Groups)
+**Test Statistic**: The difference between the RMSE of Group X and Group Y (High and Low Calorie Groups)
 
-Significnace Level: 0.05
+**Significance Level**: 0.05
 
 
 **Observed Root Mean Squared Error Difference**: 0.006862003872266542
 
 **P-value**: 0.487
 
-Conclusion After Tests: Due to the P-value being 0.487 which is larger than the significance level of 0.05, the null hypothesis is fails to be rejected. The mdoel in this case seems to work well. There is little observed difference in the RMSE and therefore the final model seems to perform decently well for recipes in both Groups X and Y. Any of the Observed Differences are mostly likely spawning from random chance. 
+**Conclusion After Tests**: Due to the P-value being 0.487 which is larger than the significance level of 0.05, the null hypothesis is fails to be rejected. The mdoel in this case seems to work well. There is little observed difference in the RMSE and therefore the final model seems to perform decently well for recipes in both Groups X and Y. Any of the Observed Differences are mostly likely spawning from random chance. 
 
 
 
