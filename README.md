@@ -19,8 +19,38 @@ The Raw Recipes Dataframe contains 83782 rows and 12 columns
 
 | Column Name | General Description |
 | --- | --- |
-| Row 1 Col 1 | Row 1 Col 2 |
-| Row 2 Col 1 | Row 2 Col 2 |
+| name | The Name of the particular recipe |
+| id | Recipe ID Number (identification)|
+| minutes | Duration needed to finish recipe |
+| contributor_id | User ID or Identification of individual that submitted the Recipe|
+| name | The Name of the particular recipe |
+| submitted | Date that Recipe was submitted to website|
+| tags | 'Tags' placed on Recipes to indicate favorable attributes|
+| nutrition |nutrition information in list form: [Calories(PDV), Total fat(PDV), Sugar(PDV), Sodium(PDV), Protein(PDV), Saturated Fat(PDV), Carbohydrates (PDV)]|
+| n_steps | Required amount of Steps to complete Recipe|
+| steps | Numerical Steps to complete the Recipe (Instructions) |
+| description | Description of The Recipe provide by the User |
+| ingredients | List of individual Ingredients needed to make the Recipe|
+| n_ingredients | Number of Ingredients required for the recipe |
+
+Second Dataframe ('interactions.csv'):
+The Interactions Dataframe contains 731927 rows and 5 columns
+
+### Column names and Descriptions to Note:
+
+| user_id | Identification of Recipe |
+| recipe_id | Identification for the User |
+| date | Date of an Interaction on The website |
+| id | Recipe ID Number (identification)|
+| rating | Rating Given by Reviewer |
+| review | Actual Review Text given for recipe|
+
+
+
+
+
+
+
 
 
 
