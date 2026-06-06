@@ -87,6 +87,15 @@ For the Bivariate Analysis, This particular plot is a Scatter Plot detailing the
 
 
 
+| calorieGroup   |   ('mean', 'rating_average') |   ('count', 'rating_average') |   ('std', 'rating_average') |
+|:---------------|-----------------------------:|------------------------------:|----------------------------:|
+| Low            |                      4.68086 |                        175529 |                    0.494435 |
+| Medium         |                      4.66612 |                         43582 |                    0.497521 |
+| High           |                      4.65242 |                          8834 |                    0.532019 |
+| Very High      |                      4.64948 |                          3526 |                    0.555699 |
+
+
+
 
 
 
