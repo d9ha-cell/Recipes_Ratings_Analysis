@@ -114,7 +114,10 @@ Alternate Hypothesis: The missingness of ratings does depend on the amount of mi
 Test Statistic: The difference in mean minutes between recipes where rating_average is missing vs when rating_average is not missing
 
 Significance Level: 0.05
+
 P-Value: 0.024
+
+The P-Value in this case meaning that the missingness of the average_ratings is dependent on the amount of time the recipe takes. In this case the null hypothesis is rejected
 
 <iframe src="missingness_minutes.html" width="800" height="600" frameborder="0"></iframe>
 
@@ -127,9 +130,71 @@ Alternate Hypothesis: The missingness of ratings does depend on the amount of mi
 Test Statistic: For n_ingredients, the difference in mean n_ingredients between recipes where rating_average is missing vs when rating_average is not missing
 
 Significance Level: 0.05
+
 P-Value: = 1
 
+The P-Value in this case meaning that the missingness of the average_ratings is not dependent on the amount of time the recipe takes. In this case we fail to reject the null hypothesis. The Rating Average missingness is not dependent on the number of ingredients.
+
+
 <iframe src="missingness_ingredients.html" width="800" height="600" frameborder="0"></iframe>
+
+## Hypothesis Testing:
+
+Circling back to the Overarching Question on whether or not the Amount of total calories affects the Average Rating of a Recipe. In this case we decided to do a permutation test to see if this is true.
+
+
+**Null Hypothesis**: There is no difference of average rating between recipes with lower calorie count and higher calorie count.
+
+**Alternate Hypothesis**: There is a difference of average rating between recipes with lower calorie count and higher calorie count
+
+**Test Statistic**: Test Statistic will be difference in Means. 
+
+Significance Level: 0.05
+
+A Permutation test in this case was chosen because there was meant to be focus on whether the means of ratings between higher calorie or lower calorie were different. In order to begin this permutation test. I first had to split the recipes into two categories being high and low calorie classifications. This was done by finding the median of the calorie counts across the entire dataframe and then splitting all the recipes from there those having a lower than the median calorie count would be considered low calorie recipes and the high calorie recipes would be recipes that fall past the median. 
+
+The **Observed Statistic** in this case was -0.017996080860049446.
+
+After executing the Permutation Test it was shown that the resulting **P-Value** was very tiny being 0.0.
+
+Due to this being significantly smaller than the Significance level. The Null Hypothesis is rejected in this case. It seems that there is a noticable difference in the average ratings between high and low calorie recipes. A potential reasoning for this somewhat lines up with the plotly we saw in the Bivariate Analysis. An enormous amount of the high ratings were scattered around low ratings. A potential explanation could be that lower calorie recipes are often looked upon with higher public opinion by default, therefore a higher rating is given as a byproduct.
+
+## Framing a Prediction Problem
+
+For the prediction Problem. I think it's best to focus on **Predicting the rating_average** of a particular recipe. The Type of problem would be **Regression** this is due to the fact that the elements in rating_average are often float numbers. The Response Variable in this case is also 'rating_average' which is the elements that we are trying to predict. This was chosen seeing as it connects to the earlier overarching question and there is also the fact that the information in the other columns most likely are very indicative of how the rating of the recipe will be. 
+
+Model Evaluation will be measured using RMSE or Root Mean Squared Error. This would be a prudent perfromance gauger vecuase it is often possessing of the same units as the target variable which is rating points (1-5). It also prvents large errors from happening often because it penalizes them more harshley than small ones. 
+
+Information that we know at the time of prediction that would be relevant would be the columns:
+**totalCalories**, **n_ingredients**, **minutes**, and **n-steps**. These are already known and have good potential in helping us predict what we need.
+
+Columns suh as **rating_average** and **review** are not good as features seeing as these columns are not known until an individual actually uses the recipe. 
+
+
+## Baseline Model
+
+The first baseline model will be a linear regression model. The features included would be the total calories (Column Name: totalCalories) which is quantitative. 
+The number of ingredients (Column Name: n_ingredients) which is also quantitative. 
+The model would predict the average rating of recipes(Column Name: rating_average). 
+
+Initial RMSE was 0.4929900164996211. 
+
+I believe that that initial RMSE is fair but it could be better. By my understanding a RMSE is shown to perform well if the number is as close to 0 as possible. 0.49 as an RMSE is barely closer to 0 than 1 therefore there could be some tweaks that could improve upon the model. 
+
+
+## Final Model
+
+One of the plans to improve this model is to add more features to it. To predict the average rating more accurately, adding columns to it such as the number of steps (Column Name: n_steps), and the time it takes to cook (Column Name: minutes) would potentially increase the performance of the model. These auxillary columns give the model more to work off of. 
+
+Another plan of attack besides the features would be to put more 'imports' into the model. RandomForestRegressors to improve perfromance would be the first import. Another Import would be QuantileTransformer, this turns the columns into a more uniform distribution which is very useful for reducing the influence of outliers. The Column Transformer was also another thing that was added seeing as it editted columns such as 'totalCalories' and 'minutes' without affecting othe columns that were devoid of outliers. Lastly, GridSearchCV is used to improve the model as well seeing it selects the best hyperparameters to use in max_depth and n_estimators. 
+
+The Best hyperparameters in terms of performance were model__max_depth = None and n_estimators = 100. 
+
+The new Final Model had a **Root Mean Squared Error**: 0.3572747903917559
+
+## Fairness Analysis
+
+
 
 
 
