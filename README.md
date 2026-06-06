@@ -85,7 +85,8 @@ For the Bivariate Analysis, This particular plot is a Scatter Plot detailing the
 
 <iframe src="calories_vs_rating.html" width="800" height="600" frameborder="0"></iframe>
 
-
+## Interesting Aggregates:
+Within this particular section focus was brought to the mean ratings, the amount of recipes within each calorie group and the standard deviation of each rating for each of the calorie groups. 
 
 | calorieGroup   |   ('mean', 'rating_average') |   ('count', 'rating_average') |   ('std', 'rating_average') |
 |:---------------|-----------------------------:|------------------------------:|----------------------------:|
