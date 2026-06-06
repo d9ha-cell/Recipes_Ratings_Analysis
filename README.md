@@ -177,12 +177,12 @@ Due to this being significantly smaller than the Significance level. The Null Hy
 
 For the prediction Problem. I think it's best to focus on **Predicting the rating_average** of a particular recipe. The Type of problem would be **Regression** this is due to the fact that the elements in rating_average are often float numbers. The Response Variable in this case is also 'rating_average' which is the elements that we are trying to predict. This was chosen seeing as it connects to the earlier overarching question and there is also the fact that the information in the other columns most likely are very indicative of how the rating of the recipe will be. 
 
-Model Evaluation will be measured using RMSE or Root Mean Squared Error. This would be a prudent perfromance gauger vecuase it is often possessing of the same units as the target variable which is rating points (1-5). It also prvents large errors from happening often because it penalizes them more harshley than small ones. 
+Model Evaluation will be measured using RMSE or Root Mean Squared Error. This would be a prudent performance gauger vecuase it is often possessing of the same units as the target variable which is rating points (1-5). It also prevents large errors from happening often because it penalizes them more harshley than small ones. 
 
 Information that we know at the time of prediction that would be relevant would be the columns:
 **totalCalories**, **n_ingredients**, **minutes**, and **n-steps**. These are already known and have good potential in helping us predict what we need.
 
-Columns suh as **rating_average** and **review** are not good as features seeing as these columns are not known until an individual actually uses the recipe. 
+Columns such as **rating_average** and **review** are not good as features seeing as these columns are not known until an individual actually uses the recipe. 
 
 
 ## Baseline Model
@@ -191,6 +191,8 @@ The first baseline model will be a linear regression model. The features include
 The number of ingredients (Column Name: n_ingredients) which is also quantitative. 
 The model would predict the average rating of recipes(Column Name: rating_average). 
 
+No Encodings Needed all of the features are quantitative
+
 Initial RMSE was 0.4929900164996211. 
 
 I believe that that initial RMSE is fair but it could be better. By my understanding a RMSE is shown to perform well if the number is as close to 0 as possible. 0.49 as an RMSE is barely closer to 0 than 1 therefore there could be some tweaks that could improve the model. 
@@ -198,9 +200,9 @@ I believe that that initial RMSE is fair but it could be better. By my understan
 
 ## Final Model
 
-One of the plans to improve this model is to add more features to it. To predict the average rating more accurately, adding columns to it such as the number of steps (Column Name: n_steps), and the time it takes to cook (Column Name: minutes) would potentially increase the performance of the model. These auxillary columns give the model more to work off of. These auxillary columns also are implicitly going to affect the prediction positively. 
+One of the plans to improve this model is to add more features to it. To predict the average rating more accurately, adding columns to it such as the number of steps (Column Name: n_steps), and the time it takes to cook (Column Name: minutes) would potentially increase the performance of the model. These auxillary columns give the model more to work off of. These auxillary columns also are implicitly going to affect the prediction positively, logically a recipe that is more complex will usually taste better, meaning that the time it takes to cook (minutes) and the number of steps (n_steps) will be higher. 
 
-Another plan of attack besides the features would be to put more 'imports' into the model. RandomForestRegressors to improve perfromance would be the first import. Another Import would be QuantileTransformer, this turns the columns into a more uniform distribution which is very useful for reducing the influence of outliers. The Column Transformer was also another thing that was added seeing as it editted columns such as 'totalCalories' and 'minutes' without affecting the columns that were devoid of outliers. Lastly, GridSearchCV is used to improve the model as well seeing as it selects the best hyperparameters to use in max_depth and n_estimators. 
+Another plan of attack besides the features would be to put more 'imports' into the model. RandomForestRegressors to improve perfromance would be the first import, this add-in is intersting because it is able to capture more non-linear patterns that the regular one in the base model could not. Another Import would be QuantileTransformer, this turns the columns into a more uniform distribution which is very useful for reducing the influence of outliers. The Column Transformer was also another thing that was added seeing as it editted columns such as 'totalCalories' and 'minutes' without affecting the columns that were devoid of outliers. Lastly, GridSearchCV is used to improve the model as well seeing as it selects the best hyperparameters to use in max_depth and n_estimators. 
 
 The Best hyperparameters in terms of performance were model_max_depth = None and n_estimators = 100. 
 
@@ -229,7 +231,7 @@ In order to do the Fairness Analysis I thought that it would be fitting to once 
 
 **P-value**: 0.487
 
-**Conclusion After Tests**: Due to the P-value being 0.487 which is larger than the significance level of 0.05, the null hypothesis is fails to be rejected. The mdoel in this case seems to work well. There is little observed difference in the RMSE and therefore the final model seems to perform decently well for recipes in both Groups X and Y. Any of the Observed Differences are mostly likely spawning from random chance. 
+**Conclusion After Tests**: Due to the P-value being 0.487 which is larger than the significance level of 0.05, the null hypothesis fails to be rejected. The model in this case seems to work well and perform fairly. There is little observed difference in the RMSE and therefore the final model seems to perform decently well for recipes in both Groups X and Y. Any of the Observed Differences are mostly likely spawning from random chance. 
 
 
 
