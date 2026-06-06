@@ -116,6 +116,8 @@ Test Statistic: The difference in mean minutes between recipes where rating_aver
 Significance Level: 0.05
 P-Value: 0.024
 
+<iframe src="missingness_minutes.html" width="800" height="600" frameborder="0"></iframe>
+
 
 
 Null Hypothesis: The missingness of Average Ratings does not depend on the amount of ingredients needed to make the Recipe.
@@ -126,6 +128,8 @@ Test Statistic: For n_ingredients, the difference in mean n_ingredients between 
 
 Significance Level: 0.05
 P-Value: = 1
+
+<iframe src="missingness_ingredients.html" width="800" height="600" frameborder="0"></iframe>
 
 
 
