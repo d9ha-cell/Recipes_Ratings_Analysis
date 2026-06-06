@@ -33,6 +33,8 @@ The Raw Recipes Dataframe contains 83782 rows and 12 columns
 | ingredients | List of individual Ingredients needed to make the Recipe|
 | n_ingredients | Number of Ingredients required for the recipe |
 
+
+
 Second Dataframe ('interactions.csv'):
 The Interactions Dataframe contains 731927 rows and 5 columns
 
