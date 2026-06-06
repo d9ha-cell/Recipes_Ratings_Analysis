@@ -70,11 +70,21 @@ Furthermore, due to the overarching question being the Average ratings in relati
 Following Data Cleaning:
 The new Dataframe contained 234429 rows and 19 columns
 
+
+
 New Columns:
 | Column Name | General Description |
 | --- | --- |
 | rating_average | Average Rating of a particular recipe |
 | totalCalories | Number of Calories for particular recipe (Isolated from the Nutriton column) |
+
+| name                                 |   minutes |   n_steps |   n_ingredients |   totalCalories |   rating_average |
+|:-------------------------------------|----------:|----------:|----------------:|----------------:|-----------------:|
+| 1 brownies in the world    best ever |        40 |        10 |               9 |           138.4 |                4 |
+| 1 in canada chocolate chip cookies   |        45 |        12 |              11 |           595.1 |                5 |
+| 412 broccoli casserole               |        40 |         6 |               9 |           194.8 |                5 |
+| 412 broccoli casserole               |        40 |         6 |               9 |           194.8 |                5 |
+| 412 broccoli casserole               |        40 |         6 |               9 |           194.8 |                5 |
 
 
 ## Univariate Analysis:
