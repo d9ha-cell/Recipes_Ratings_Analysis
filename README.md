@@ -95,6 +95,41 @@ Within this particular section focus was brought to the mean ratings, the amount
 | High           |                      4.65242 |                          8834 |                    0.532019 |
 | Very High      |                      4.64948 |                          3526 |                    0.555699 |
 
+Interestingly, there is an enormous amount of recipes in the low calorie group which could explain why the mean rating for low calorie recipes are so high. There is also the fact that the standard Deviations for each calorie group increases as the amount of calories becomes higher. This suggests that the ratings for the recipes become more and more varied as the calories increase in the recipes.
+
+## Assessment of Missingness:
+
+## NMAR Analysis:
+The column within this dataframe that most likely is NMAR is The 'rating_average' column. This is due to the fact that it exists as the successor to the 'review' column which is most likely to be empty due to individuals that used the recipe to having no opinion or an indifferent one causing them to purposely not leave a review on the that specific recipe. However in this case The Not Missing A Random Analysis will be done on the 'rating_average' column because it's more applicable to the overarching question.
+
+## Missingness Dependency:
+In order to test whether the 'rating_average' column is not missing at random it will be tested with a permutation test agianst the columns 'minutes' and 'n_ingredients'
+
+Minutes Against Rating Average
+
+Null Hypothesis: The missingness of Average Ratings does not depend on the amount of minutes needed to make the Recipe.
+
+Alternate Hypothesis: The missingness of ratings does depend on the amount of minutes needed to make the recipe.
+
+Test Statistic: The difference in mean minutes between recipes where rating_average is missing vs when rating_average is not missing
+
+Significance Level: 0.05
+P-Value: 0.024
+
+
+
+Null Hypothesis: The missingness of Average Ratings does not depend on the amount of ingredients needed to make the Recipe.
+
+Alternate Hypothesis: The missingness of ratings does depend on the amount of minutes ingredients needed to make the recipe.
+
+Test Statistic: For n_ingredients, the difference in mean n_ingredients between recipes where rating_average is missing vs when rating_average is not missing
+
+Significance Level: 0.05
+P-Value: = 1
+
+
+
+
 
 
 
