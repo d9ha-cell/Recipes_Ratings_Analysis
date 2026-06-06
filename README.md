@@ -11,3 +11,15 @@ The Dataset being observed within this project is a compilation of recipes gathe
 ### Overarching Question:
 ## Does the Amount of calories within a specific recipe affect its Rating? ##
 
+### The Data 
+First Dataframe ('RAW_recipes.csv'):
+The Raw Recipes Dataframe contains 83782 rows and 12 columns
+
+
+| Header 1 | Header 2 | Header 3 |
+| --- | --- | --- |
+| Row 1 Col 1 | Row 1 Col 2 | Row 1 Col 3 |
+| Row 2 Col 1 | Row 2 Col 2 | Row 2 Col 3 |
+
+
+
