@@ -165,7 +165,7 @@ Circling back to the Overarching Question on whether or not the Amount of total 
 
 Significance Level: 0.05
 
-A Permutation test in this case was chosen because there was meant to be focus on whether the means of ratings between higher calorie or lower calorie were different. In order to begin this permutation test. I first had to split the recipes into two categories being high and low calorie classifications. This was done by finding the median of the calorie counts across the entire dataframe and then splitting all the recipes from there those having a lower than the median calorie count would be considered low calorie recipes and the high calorie recipes would be recipes that fall past the median. 
+A Permutation test in this case was chosen because there was meant to be focus on whether the means of ratings between higher calorie or lower calorie were different. If the means of the recipes are noticably different then there must be a disparity regarding ratings depending on the calorie count of the recipe. In order to begin this permutation test. I first had to split the recipes into two categories being high and low calorie classifications. This was done by finding the median of the calorie counts across the entire dataframe and then splitting all the recipes from there. Those having a lower calorie count than the median calorie count would be considered low calorie recipes and the high calorie recipes would be recipes that fall past the median. 
 
 The **Observed Statistic** in this case was -0.017996080860049446.
 
