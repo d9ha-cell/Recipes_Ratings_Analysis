@@ -88,7 +88,7 @@ For the Bivariate Analysis, This particular plot is a Scatter Plot detailing the
 <iframe src="calories_vs_rating.html" width="800" height="600" frameborder="0"></iframe>
 
 ## Interesting Aggregates:
-Within this particular section focus was brought to the mean ratings, the amount of recipes within each calorie group and the standard deviation of each rating for each of the calorie groups. 
+Within this particular section focus was brought to the mean ratings, the amount of recipes within each calorie group and the standard deviation of each rating for each of the calorie groups. A pivot table is generated here to show each of these metrics.
 
 | calorieGroup   |   ('mean', 'rating_average') |   ('count', 'rating_average') |   ('std', 'rating_average') |
 |:---------------|-----------------------------:|------------------------------:|----------------------------:|
@@ -102,7 +102,7 @@ Interestingly, there is an enormous amount of recipes in the low calorie group w
 ## Assessment of Missingness:
 
 ## NMAR Analysis:
-The column within this dataframe that most likely is NMAR is The 'rating_average' column. This is due to the fact that it exists as the successor to the 'review' column which is most likely to be empty due to individuals that used the recipe to having no opinion or an indifferent one causing them to purposely not leave a review on the that specific recipe. However in this case The Not Missing A Random Analysis will be done on the 'rating_average' column because it's more applicable to the overarching question.
+The column within this dataframe that most likely is NMAR is The 'rating_average' column. This is due to the fact that it exists as the successor to the 'review' column which is most likely to be empty due to individuals that used the recipe to having no opinion or an indifferent one causing them to purposely not leave a review on that specific recipe. However in this case The Not Missing A Random Analysis will be done on the 'rating_average' column because it's more applicable to the overarching question.
 
 ## Missingness Dependency:
 In order to test whether the 'rating_average' column is not missing at random it will be tested with a permutation test agianst the columns 'minutes' and 'n_ingredients'
@@ -119,17 +119,17 @@ Significance Level: 0.05
 
 P-Value: 0.024
 
-The P-Value in this case meaning that the missingness of the average_ratings is dependent on the amount of time the recipe takes. In this case the null hypothesis is rejected
+The P-Value in this case meaning that the missingness of the average_ratings is dependent on the amount of time the recipe takes. In this case the null hypothesis is rejected in favor to the Alternate Hypothesis.
 
 <iframe src="missingness_minutes.html" width="800" height="600" frameborder="0"></iframe>
 
 
 
-Null Hypothesis: The missingness of Average Ratings does not depend on the amount of ingredients needed to make the Recipe.
+**Null Hypothesis**: The missingness of Average Ratings does not depend on the amount of ingredients needed to make the Recipe.
 
-Alternate Hypothesis: The missingness of ratings does depend on the amount of minutes ingredients needed to make the recipe.
+**Alternate Hypothesis**: The missingness of ratings does depend on the amount of minutes ingredients needed to make the recipe.
 
-Test Statistic: For n_ingredients, the difference in mean n_ingredients between recipes where rating_average is missing vs when rating_average is not missing
+**Test Statistic**: For n_ingredients, the difference in mean n_ingredients between recipes where rating_average is missing vs when rating_average is not missing
 
 Significance Level: 0.05
 
@@ -181,22 +181,22 @@ The model would predict the average rating of recipes(Column Name: rating_averag
 
 Initial RMSE was 0.4929900164996211. 
 
-I believe that that initial RMSE is fair but it could be better. By my understanding a RMSE is shown to perform well if the number is as close to 0 as possible. 0.49 as an RMSE is barely closer to 0 than 1 therefore there could be some tweaks that could improve upon the model. 
+I believe that that initial RMSE is fair but it could be better. By my understanding a RMSE is shown to perform well if the number is as close to 0 as possible. 0.49 as an RMSE is barely closer to 0 than 1 therefore there could be some tweaks that could improve the model. 
 
 
 ## Final Model
 
-One of the plans to improve this model is to add more features to it. To predict the average rating more accurately, adding columns to it such as the number of steps (Column Name: n_steps), and the time it takes to cook (Column Name: minutes) would potentially increase the performance of the model. These auxillary columns give the model more to work off of. 
+One of the plans to improve this model is to add more features to it. To predict the average rating more accurately, adding columns to it such as the number of steps (Column Name: n_steps), and the time it takes to cook (Column Name: minutes) would potentially increase the performance of the model. These auxillary columns give the model more to work off of. These auxillary columns also are implicitly going to affect the prediction positively. 
 
-Another plan of attack besides the features would be to put more 'imports' into the model. RandomForestRegressors to improve perfromance would be the first import. Another Import would be QuantileTransformer, this turns the columns into a more uniform distribution which is very useful for reducing the influence of outliers. The Column Transformer was also another thing that was added seeing as it editted columns such as 'totalCalories' and 'minutes' without affecting othe columns that were devoid of outliers. Lastly, GridSearchCV is used to improve the model as well seeing it selects the best hyperparameters to use in max_depth and n_estimators. 
+Another plan of attack besides the features would be to put more 'imports' into the model. RandomForestRegressors to improve perfromance would be the first import. Another Import would be QuantileTransformer, this turns the columns into a more uniform distribution which is very useful for reducing the influence of outliers. The Column Transformer was also another thing that was added seeing as it editted columns such as 'totalCalories' and 'minutes' without affecting the columns that were devoid of outliers. Lastly, GridSearchCV is used to improve the model as well seeing as it selects the best hyperparameters to use in max_depth and n_estimators. 
 
-The Best hyperparameters in terms of performance were model__max_depth = None and n_estimators = 100. 
+The Best hyperparameters in terms of performance were model_max_depth = None and n_estimators = 100. 
 
 The new Final Model had a **Root Mean Squared Error**: 0.3572747903917559
 
 ## Fairness Analysis
 
-In order to do the Fairness Analysis I thought that it would be fitting to once again choose two groups of recipes that had to do with the overarching question. The Groups therefore were split into two groups of lower and Higher calories. 
+In order to do the Fairness Analysis I thought that it would be fitting to once again choose two groups of recipes that had to do with the overarching question. The Groups therefore were split into two groups of lower and Higher calorie counts. 
 
 Group X Chosen: High Calorie Count Recipes (Recipes with Total Calories >= median of 301.1)
 
@@ -217,7 +217,7 @@ Significnace Level: 0.05
 
 **P-value**: 0.487
 
-Conclusion After Tests: Due to the P-value being 0.487 being larger than the significance level of 0.05, the null hypothesis is failed to be rejected. The mdoel in this case seems to work well. There is little observed difference in the RMSE and therefore the final model seems to perform decently well for recipes in both Groups X and Y. Any of the Observed Differences are mostly likely spawning from random chance. 
+Conclusion After Tests: Due to the P-value being 0.487 which is larger than the significance level of 0.05, the null hypothesis is fails to be rejected. The mdoel in this case seems to work well. There is little observed difference in the RMSE and therefore the final model seems to perform decently well for recipes in both Groups X and Y. Any of the Observed Differences are mostly likely spawning from random chance. 
 
 
 
