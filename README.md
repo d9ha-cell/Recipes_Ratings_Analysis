@@ -6,7 +6,7 @@ Author: Darren Ha
 This particular project was conducted in the DSC 80 at UCSD. It was meant to gauge the relationship between specific recipe's overall calories and their general rating. 
 
 ## Introduction:
-The Dataset being observed within this project is a compilation of recipes gathered from food.com. The recipes themselves are organized by ID and were given a particular rating out of five which reflect individual user's experiences with the recipe. 
+The Dataset being observed within this project is a compilation of recipes gathered from food.com. The recipes themselves are organized by ID and were given a particular rating out of five which reflect individual's experiences with the recipe. 
 
 ### Overarching Question:
 ## Does the Amount of calories within a specific recipe affect its Rating? ##
