@@ -78,6 +78,8 @@ New Columns:
 | rating_average | Average Rating of a particular recipe |
 | totalCalories | Number of Calories for particular recipe (Isolated from the Nutriton column) |
 
+
+Head of Cleaned Dataframe:
 | name                                 |   minutes |   n_steps |   n_ingredients |   totalCalories |   rating_average |
 |:-------------------------------------|----------:|----------:|----------------:|----------------:|-----------------:|
 | 1 brownies in the world    best ever |        40 |        10 |               9 |           138.4 |                4 |
@@ -112,7 +114,7 @@ Interestingly, there is an enormous amount of recipes in the low calorie group w
 ## Assessment of Missingness:
 
 ## NMAR Analysis:
-The column within this dataframe that most likely is NMAR is The 'rating_average' column. This is due to the fact that it exists as the successor to the 'review' column which is most likely to be empty due to individuals that used the recipe to having no opinion or an indifferent one causing them to purposely not leave a review on that specific recipe. However in this case The Not Missing A Random Analysis will be done on the 'rating_average' column because it's more applicable to the overarching question.
+The column within this dataframe that most likely is NMAR is The 'rating_average' column. This is due to the fact that it exists as the successor to the 'review' column which is most likely to be empty due to individuals that used the recipe to having no opinion or an indifferent one causing them to purposely not leave a review on that specific recipe. However in this case The NMAR will be done on the 'rating_average' column because it's more applicable to the overarching question.
 
 ## Missingness Dependency:
 In order to test whether the 'rating_average' column is not missing at random it will be tested with a permutation test agianst the columns 'minutes' and 'n_ingredients'
