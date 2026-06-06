@@ -56,7 +56,7 @@ We will be looking at the information regarding calories in each row and seeing 
 ## Data Cleaning and Exploratory Data:
 
 ### Step 1:
-Began by merging the Two dataframes using th 'id' column of the Interactions Dataframe and the 'recipe_id' column of the Raw Recipes Dataframe.
+Began by merging the Two dataframes using the 'id' column of the Interactions Dataframe and the 'recipe_id' column of the Raw Recipes Dataframe.
 
 ### Step 2:
 Following the merging of the Dataframes, all of the 0s within the Ratings Column would be replaced by np.nan. This is done because ratings on the website are only and usually between the rankings of 1 and 5. Therefore, ratings of zero within the dataframe indicate an individual not actually placing in a rating for their review. Therefore, these ratings must be replaced by 0 to not only prevent biases but also prepare the row for the Data cleaning being done in the next step.
