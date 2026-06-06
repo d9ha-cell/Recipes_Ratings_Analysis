@@ -75,8 +75,13 @@ New Columns:
 | totalCalories | Number of Calories for particular recipe (Isolated from the Nutriton column) |
 
 
+## Univariate Analysis:
+For the Univariate Analysis the graph was made to observe the amount of recipes that got a particular average rating. Interestingly an enormous amount of the recipes within this dataset have very high ratings with an enormous amount of them having ratings of five.
 
 <iframe src="avg_rating_distribution.html" width="800" height="600" frameborder="0"></iframe>
+
+## Bivariate Analysis:
+For the Bivariate Analysis, This particular plot is a Scatter Plot detailing the Average Rating of recipes in relation to their calorie count. Interestingly, the higher rated recipes are clustered around places with lower calorie counts, which is opposite to what many would expect.
 
 <iframe src="calories_vs_rating.html" width="800" height="600" frameborder="0"></iframe>
 
