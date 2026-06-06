@@ -47,6 +47,40 @@ The Interactions Dataframe contains 731927 rows and 5 columns
 | rating | Rating Given by Reviewer |
 | review | Actual Review Text given for recipe|
 
+## Why this Matters:
+
+We will be looking at the information regarding calories in each row and seeing how it has an effect on peoples opinion on the recipe. Higher Calorie food is often associated with poor health and weight gain. It's often cited that good tasting food is usually higher in caloric value. Viewing this dataset can be an interesting lens on whether this common opinion is actually true.
+
+## Data Cleaning and Exploratory Data:
+
+## Step 1:
+Began by merging the Two dataframes using th 'id' column of the Interactions Dataframe and the 'recipe_id' column of the Raw Recipes Dataframe.
+
+## Step 2:
+Following the merging of the Dataframes, all of the 0s within the Ratings Column would be replaced by np.nan. This is done because ratings on the website are only and usually between the rankings of 1 and 5. Therefore, ratings of zero within the dataframe indicate an individual not actually placing in a rating for their review. Therefore, these ratings must be replaced by 0 to not only prevent biases but also prepare the row for the Data cleaning being done in the next step.
+
+## Step 3:
+The Data cleaning within this instance also included the creation of an Average Ratings column within the Dataframe. To do this, first a series was created by grouping all of the ids together and getting a mean of all the ratings of recipes that shared the id. The Series was then merged with the main dataframe to create a new column, called 'rating_average'. This would now be the most applicable column for the future predictions regarding the overarching Question. 
+
+## Step 4: 
+Furthermore, due to the overarching question being the Average ratings in relation to total calories. There had to be a way to isolate the total amount of calories for each recipe. In this case, I created a new column called 'totalCalories' and assigned it to the first element in the list for nutrition, which are the calories for a specific recipe. From there the amount of calories for each particular recipe was easier to interpret.
+
+Following Data Cleaning:
+The new Dataframe contained 234429 rows and 19 columns
+
+New Columns:
+| Column Name | General Description |
+| --- | --- |
+| rating_average | Average Rating of a particular recipe |
+| totalCalories | Number of Calories for particular recipe (Isolated from the Nutriton column) |
+
+
+
+
+
+
+
+
 
 
 
