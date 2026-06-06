@@ -74,6 +74,10 @@ New Columns:
 | rating_average | Average Rating of a particular recipe |
 | totalCalories | Number of Calories for particular recipe (Isolated from the Nutriton column) |
 
+<iframe src="assets/avg_rating_distribution.html" width="800" height="600" frameborder="0"></iframe>
+
+<iframe src="assets/calories_vs_rating.html" width="800" height="600" frameborder="0"></iframe>
+
 
 
 
