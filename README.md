@@ -193,7 +193,7 @@ The model would predict the average rating of recipes(Column Name: rating_averag
 
 No Encodings Needed all of the features are quantitative
 
-Initial RMSE was 0.4929900164996211. 
+Initial RMSE was 0.49393105322050906. 
 
 I believe that that initial RMSE is fair but it could be better. By my understanding a RMSE is shown to perform well if the number is as close to 0 as possible. 0.49 as an RMSE is barely closer to 0 than 1 therefore there could be some tweaks that could improve the model. 
 
@@ -206,7 +206,7 @@ Another plan of attack besides the features would be to put more 'imports' into 
 
 The Best hyperparameters in terms of performance were model_max_depth = None and n_estimators = 100. 
 
-The new Final Model had a **Root Mean Squared Error**: 0.3572747903917559
+The new Final Model had a **Root Mean Squared Error**: 0.3568866101124827
 
 ## Fairness Analysis
 
