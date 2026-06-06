@@ -38,6 +38,8 @@ The Interactions Dataframe contains 731927 rows and 5 columns
 
 ### Column names and Descriptions to Note:
 
+| Column Name | General Description |
+| --- | --- |
 | user_id | Identification of Recipe |
 | recipe_id | Identification for the User |
 | date | Date of an Interaction on The website |
