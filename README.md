@@ -131,7 +131,7 @@ Significance Level: 0.05
 
 P-Value: 0.024
 
-The P-Value in this case meaning that the missingness of the average_ratings is dependent on the amount of time the recipe takes. In this case the null hypothesis is rejected in favor to the Alternate Hypothesis.
+The P-Value in this case meaning that the missingness of the average_ratings is dependent on the amount of time the recipe takes. In this case the null hypothesis is rejected in favor of the Alternate Hypothesis.
 
 <iframe src="missingness_minutes.html" width="800" height="600" frameborder="0"></iframe>
 
